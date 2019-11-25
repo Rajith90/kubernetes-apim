@@ -96,7 +96,7 @@ spec:
               protocol: "TCP"
           env:
             - name: HOST_NAME
-              value: "{{ .Release.Name }}-am"
+              value: "ec2-54-226-4-38.compute-1.amazonaws.com"
             - name: NODE_IP
               valueFrom:
                 fieldRef:

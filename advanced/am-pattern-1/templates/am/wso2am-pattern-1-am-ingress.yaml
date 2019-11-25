@@ -26,9 +26,9 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ .Release.Name }}-am
+        - ec2-54-226-4-38.compute-1.amazonaws.com
   rules:
-    - host: {{ .Release.Name }}-am
+    - host: ec2-54-226-4-38.compute-1.amazonaws.com
       http:
         paths:
           - path: /
