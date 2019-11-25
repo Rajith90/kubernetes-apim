@@ -23,22 +23,22 @@ wso2:
   deployment:
     dependencies:
       # The configuration should be set to be 'true' if a MySQL database should be spawned as a pod within the cluster
-      mysql: true
+      mysql: false
       # Enable NFS dynamic provisioner for Kubernetes
-      nfsServerProvisioner: true
+      nfsServerProvisioner: false
 
     persistentRuntimeArtifacts:
       # Persistent storage provider expected to be used for sharing persistent runtime artifacts
       # This can be one of the following.
       #   1. internal-nfs - Using the NFS dynamic provisioner for Kubernetes
       #   2. external-nfs - Using an externally configured NFS server
-      cloudProvider: "internal-nfs"
+      cloudProvider: "external-nfs"
       # External NFS Server IP
-      nfsServerIP: ""
+      nfsServerIP: "127.0.0.1"
       # Exported location on external NFS Server to be mounted at <APIM_HOME>/repository/deployment/server/synapse-configs
-      sharedAPIMSynapseConfigsPath: ""
+      sharedAPIMSynapseConfigsPath: "/mnt/sharedfolder/sharedAPIMSynapseConfigs"
       # Exported location on external NFS Server to be mounted at <APIM_HOME>/repository/deployment/server/executionplans
-      sharedAPIMExecutionPlansPath: ""
+      sharedAPIMExecutionPlansPath: "/mnt/sharedfolder/sharedAPIMExecutionPlans"
 
     am:
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value.

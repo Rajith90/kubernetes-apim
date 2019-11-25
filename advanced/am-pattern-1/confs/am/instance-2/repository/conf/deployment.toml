@@ -18,14 +18,14 @@ type = "database"
 
 [database.apim_db]
 type = "mysql"
-url = "jdbc:mysql://wso2am-mysql-db-service:3306/WSO2AM_DB?autoReconnect=true&amp;useSSL=false"
+url = "jdbc:mysql://172.31.44.134:3306/WSO2AM_DB?autoReconnect=true&amp;useSSL=false"
 username = "wso2carbon"
 password = "wso2carbon"
 driver = "com.mysql.cj.jdbc.Driver"
 
 [database.shared_db]
 type = "mysql"
-url = "jdbc:mysql://wso2am-mysql-db-service:3306/WSO2AM_SHARED_DB?autoReconnect=true&amp;useSSL=false"
+url = "jdbc:mysql://172.31.44.134:3306/WSO2AM_SHARED_DB?autoReconnect=true&amp;useSSL=false"
 username = "wso2carbon"
 password = "wso2carbon"
 driver = "com.mysql.cj.jdbc.Driver"
@@ -80,7 +80,7 @@ https_endpoint = "https://{{ .Release.Name }}-gateway"
 #expiry_time = "2m"
 
 [apim.analytics]
-enable = true
+enable = false
 store_api_url = "https://wso2am-pattern-1-analytics-worker-service:7444"
 #username = "$ref{super_admin.username}"
 #password = "$ref{super_admin.password}"
