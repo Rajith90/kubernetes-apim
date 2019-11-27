@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-mysql:
+  image: "mysql"
   imageTag: "5.7.28"
   mysqlRootPassword: root
   mysqlUser: wso2carbon
