@@ -70,7 +70,7 @@ wso2:
         # as per official documentation (https://apim.docs.wso2.com/en/next/SetupAndInstall/InstallationGuide/installation-prerequisites/).
         requests:
           memory: "2Gi"
-          cpu: "1"
+          cpu: "0.5"
         limits:
           memory: "3Gi"
           cpu: "1"
