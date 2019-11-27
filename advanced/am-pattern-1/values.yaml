@@ -23,22 +23,22 @@ wso2:
   deployment:
     dependencies:
       # The configuration should be set to be 'true' if a MySQL database should be spawned as a pod within the cluster
-      mysql: true
+      mysql-am: false
       # Enable NFS dynamic provisioner for Kubernetes
-      nfsServerProvisioner: true
+      nfsServerProvisioner: false
 
     persistentRuntimeArtifacts:
       # Persistent storage provider expected to be used for sharing persistent runtime artifacts
       # This can be one of the following.
       #   1. internal-nfs - Using the NFS dynamic provisioner for Kubernetes
       #   2. external-nfs - Using an externally configured NFS server
-      cloudProvider: "internal-nfs"
+      cloudProvider: "external-nfs"
       # External NFS Server IP
-      nfsServerIP: ""
+      nfsServerIP: "localhost"
       # Exported location on external NFS Server to be mounted at <APIM_HOME>/repository/deployment/server/synapse-configs
-      sharedAPIMSynapseConfigsPath: ""
+      sharedAPIMSynapseConfigsPath: "/mnt/sharedfolder/sharedAPIMSynapseConfigs"
       # Exported location on external NFS Server to be mounted at <APIM_HOME>/repository/deployment/server/executionplans
-      sharedAPIMExecutionPlansPath: ""
+      sharedAPIMExecutionPlansPath: "/mnt/sharedfolder/sharedAPIMExecutionPlans"
 
     am:
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value.
@@ -70,10 +70,10 @@ wso2:
         # as per official documentation (https://apim.docs.wso2.com/en/next/SetupAndInstall/InstallationGuide/installation-prerequisites/).
         requests:
           memory: "2Gi"
-          cpu: "2000m"
+          cpu: "1"
         limits:
           memory: "3Gi"
-          cpu: "3000m"
+          cpu: "1"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
 
@@ -121,13 +121,13 @@ wso2:
           # as per official documentation (https://docs.wso2.com/display/SP440/Installation+Prerequisites).
           requests:
             memory: "4Gi"
-            cpu: "2000m"
+            cpu: "1"
           # Please see the official documentation on WSO2 Stream Processor based Performance Analysis and Resource recommendations
           # (https://docs.wso2.com/display/SP440/Performance+Analysis+Results) and tune the limits according to your needs
           # where necessary.
           limits:
             memory: "4Gi"
-            cpu: "2000m"
+            cpu: "1"
         imagePullPolicy: Always
 
       worker:
@@ -160,13 +160,13 @@ wso2:
           # as per official documentation (https://docs.wso2.com/display/SP440/Installation+Prerequisites).
           requests:
             memory: "4Gi"
-            cpu: "2000m"
+            cpu: "1"
           # Please see the official documentation on WSO2 Stream Processor based Performance Analysis and Resource recommendations
           # (https://docs.wso2.com/display/SP440/Performance+Analysis+Results) and tune the limits according to your needs
           # where necessary.
           limits:
             memory: "4Gi"
-            cpu: "2000m"
+            cpu: "1"
         imagePullPolicy: Always
 
 kubernetes:

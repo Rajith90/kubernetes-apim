@@ -139,7 +139,7 @@ url = "https://{{ .Release.Name }}-am/devportal"
 #enable_forum = true
 
 [transport.https.properties]
-proxyPort = 443
+proxyPort = 31222
 
 [apim.cors]
 allow_origins = "*"
